@@ -27,13 +27,16 @@ export default router
 // Replace with your Supabase URL and Anon Key
 // Import the Supabase client
 // Replace with your Supabase URL and Anon Key
-const supabaseUrl = 'https://your-project-ref.supabase.co';
-const supabaseAnonKey = 'your-anon-key';
+
+
 
 // Create a Supabase client
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
 // Example function to fetch data from a table
+
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL
+const supabaseKey = process.env.REACT_APP_ANON_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 async function fetchData() {
     const { data, error } = await supabase
         .from('User table')
@@ -48,3 +51,6 @@ async function fetchData() {
 
 // Call the fetchData function
 fetchData();
+
+
+export default supabase
