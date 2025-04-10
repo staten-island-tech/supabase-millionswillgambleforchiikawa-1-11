@@ -2,7 +2,15 @@
 
 <template>
   <main>
-    <TheWelcome />
+    <div>
+      <form action="">
+        <label for="name">Username:</label>
+        <input type="text" name="username" id="name" />
+        <label for="pass">Password:</label>
+        <input type="text" name="password" id="pass" />
+        <button id="LogIn" type="submit">Submit</button>
+      </form>
+    </div>
   </main>
 </template>
 
