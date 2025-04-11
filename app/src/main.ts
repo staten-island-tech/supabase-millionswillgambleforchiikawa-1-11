@@ -16,13 +16,13 @@ app.use(router)
 
 app.mount('#app')
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const supabaseUrl = "https://mkumryudrsvmgwhydnxl.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1rdW1yeXVkcnN2bWd3aHlkbnhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM2MDkxNjUsImV4cCI6MjA1OTE4NTE2NX0.ZZJ9_gEdXDP818MGRU7j0r7aKWlVtEY0ZAcq024aKY8"
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 
 async function fetchData() {
-  const { data, error } = await supabase.from('auth.users').select('*')
+  const { data, error } = await supabase.from('usertable').select('*')
 
   if (error) {
     console.error('Error fetching data:', error)
