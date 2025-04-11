@@ -4,10 +4,14 @@
   <main>
     <div>
       <form action="">
-        <label for="name">Username:</label>
-        <input type="text" name="username" id="name" />
-        <label for="pass">Password:</label>
-        <input type="text" name="password" id="pass" />
+        <div>
+          <label for="name">Username: </label>
+          <input type="text" name="username" id="name" />
+        </div>
+        <div>
+          <label for="pass">Password: </label>
+          <input type="password" name="password" id="pass" />
+        </div>
         <button id="LogIn" type="submit">Submit</button>
       </form>
     </div>
