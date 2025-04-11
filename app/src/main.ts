@@ -22,7 +22,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 
 async function fetchData() {
-  const { data, error } = await supabase.from('auth.users').select('*')
+  const { data, error } = await supabase.from('usertable').select('id')
 
   if (error) {
     console.error('Error fetching data:', error)
