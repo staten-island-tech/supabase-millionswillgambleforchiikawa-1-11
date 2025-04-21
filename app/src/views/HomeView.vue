@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import
+import supabase from '@/main'
+import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient'
+import { SupabaseAuthClientOptions } from '@supabase/supabase-js/dist/module/lib/types'
 </script>
 
 <template>
@@ -14,7 +16,7 @@ import
           <label for="pass">Password: </label>
           <input type="password" name="password" id="pass" />
         </div>
-        <button @click="auth.login" id="LogIn" type="submit">Submit</button>
+        <button @click="auth.login" id="log-in" type="submit">Submit</button>
       </form>
     </div>
   </main>
