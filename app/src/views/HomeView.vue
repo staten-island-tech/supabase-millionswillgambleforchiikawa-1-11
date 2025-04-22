@@ -12,7 +12,7 @@
           <label for="pass">Password: </label>
           <input type="password" name="password" id="pass" />
         </div>
-        <button id="LogIn" type="submit">Submit</button>
+        <button @click="auth.login" id="log-in" type="submit">Submit</button>
       </form>
     </div>
   </main>
