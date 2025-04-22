@@ -1,20 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SignIn from '@/components/SignIn.vue'
+</script>
 
 <template>
   <main>
-    <div>
-      <form action="">
-        <div>
-          <label for="name">Username: </label>
-          <input type="text" name="username" id="name" />
-        </div>
-        <div>
-          <label for="pass">Password: </label>
-          <input type="password" name="password" id="pass" />
-        </div>
-        <button @click="auth.login" id="log-in" type="submit">Submit</button>
-      </form>
-    </div>
+    <SignIn></SignIn>
   </main>
 </template>
 
