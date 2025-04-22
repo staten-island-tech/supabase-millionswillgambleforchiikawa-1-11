@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import supabase from '@/main'
-import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient'
-import { SupabaseAuthClientOptions } from '@supabase/supabase-js/dist/module/lib/types'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <main>
