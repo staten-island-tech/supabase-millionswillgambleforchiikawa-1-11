@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useAuthStore } from '../stores/pinia.ts' // Ensure this path is correct
+import { useAuthStore } from '../stores/pinia' // Ensure this path is correct
 import { useRouter } from 'vue-router' // Import useRouter
 
 const authStore = useAuthStore()
