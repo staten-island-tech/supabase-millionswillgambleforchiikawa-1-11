@@ -34,4 +34,4 @@ async function fetchData() {
 // Call the fetchData function
 fetchData()
 
-export default supabase
+export default supabase 
