@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import SignIn from '@/components/SignIn.vue'
+import CreateAccount from '@/components/CreateAccount.vue'
 </script>
 
 <template>
   <main>
     <SignIn></SignIn>
+    <CreateAccount></CreateAccount>
   </main>
 </template>
 
