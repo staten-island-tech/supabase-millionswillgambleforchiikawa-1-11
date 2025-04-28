@@ -1,19 +1,17 @@
-// stores/useAuthStore.js
+// stores/authStore.ts
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import supabase from '../main'; // Adjust the path as necessary
-import type { User } from '@supabase/supabase-js';
-
-
+import type { User } from '@supabase/supabase-js'; // Import User type
 
 export interface AuthStore {
   user: User | null;
   error: string | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
 }
-
 
 export const useAuthStore = defineStore('auth', (): AuthStore => {
   const user = ref<User | null>(null);
@@ -38,6 +36,25 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
     }
   };
 
+  const signUp = async (email: string, password: string) => {
+    loading.value = true;
+    error.value = null;
+
+    // Call the signUp method and destructure the response correctly
+    const { data, error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    loading.value = false;
+
+    if (signUpError) {
+      error.value = signUpError.message; // Handle sign-up error
+    } else {
+      user.value = data.user; // Set the user if sign-up is successful
+    }
+  };
+
   const logout = async () => {
     const { error: logoutError } = await supabase.auth.signOut();
     if (logoutError) {
@@ -52,16 +69,7 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
     error: error.value,
     loading: loading.value,
     login,
+    signUp,
     logout,
   };
 });
-
-
-
-
-
-
-
-
-
-
