@@ -12,7 +12,7 @@
       <button type="submit" :disabled="authStore.loading">Create Account</button>
       <div v-if="authStore.error">{{ authStore.error }}</div>
     </form>
-    <p>Already have an account? <button @click="switchToLogin">Sign In</button></p>
+    <p>Already have an account? <button @click="switchToLogin">Sign Up</button></p>
   </div>
 </template>
 
