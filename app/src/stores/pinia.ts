@@ -9,7 +9,7 @@ export interface AuthStore {
   error: string | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<{ user: User | null; error: string | null }>; // Update return type
   logout: () => Promise<void>;
 }
 
@@ -40,7 +40,7 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
     loading.value = true;
     error.value = null;
 
-    // Call the signUp method and destructure the response correctly
+    // Call the signUp method and handle the response correctly
     const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
@@ -50,8 +50,10 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
 
     if (signUpError) {
       error.value = signUpError.message; // Handle sign-up error
+      return { user: null, error: signUpError.message }; // Return error
     } else {
       user.value = data.user; // Set the user if sign-up is successful
+      return { user: data.user, error: null }; // Return user
     }
   };
 
