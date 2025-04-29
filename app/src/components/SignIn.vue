@@ -32,6 +32,7 @@ const login = async () => {
     if (authStore.user) {
       // Redirect to the desired page after successful login
       router.push('/AboutView') // Change '/dashboard' to your desired route
+    } else {
     }
   } catch (error) {
     console.error('Login failed:', error) // Handle error appropriately
