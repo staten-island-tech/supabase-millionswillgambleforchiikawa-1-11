@@ -28,9 +28,9 @@ const router = useRouter() // Initialize the router
 
 const createAccount = async () => {
   try {
-    const { user, error } = await authStore.signUp(email.value, password.value)
+    const { error } = await authStore.signUp(email.value, password.value)
     if (error) {
-      authStore.error = error.message // Set error message in the store
+      authStore.error = error // Set error message in the store
       console.error('Sign up failed:', error)
     } else {
       // Redirect to the desired page after successful account creation
