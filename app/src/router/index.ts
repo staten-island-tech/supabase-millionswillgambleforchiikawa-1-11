@@ -1,14 +1,9 @@
-
-
 // Replace with your Supabase URL and Anon Key
 // Import the Supabase client
 // Replace with your Supabase URL and Anon Key
 
-
-
 // Create a Supabase client
 // Example function to fetch data from a table
-
 
 // src/router.js
 import { createRouter, createWebHistory } from 'vue-router';
@@ -25,6 +20,11 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/landing',
+      name: 'landing',
+      component: () => import('../views/LandingPage.vue'),
     },
   ],
 });
