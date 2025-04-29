@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <nav>
     <RouterLink to="/">Sign In</RouterLink>
     <RouterLink to="/about">Create Account</RouterLink>
-    <router-link to="/landing">Landing</router-link>
+    <RouterLink to="/landing">Landing Page</RouterLink>
   </nav>
 
   <RouterView />
