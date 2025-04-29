@@ -24,9 +24,14 @@ const router = createRouter({
     {
       path: '/landing',
       name: 'landing',
-      component: () => import('../views/LandingPage.vue'),
+      component: () => import('../views/e.vue'),
+    },
+    {
+      path: '/landing',         // ✅ URL: http://localhost:5173/landing
+      name: 'landing',
+      component: () => import('../views/e.vue'),
     },
   ],
-});
+})
 
 export default router;
