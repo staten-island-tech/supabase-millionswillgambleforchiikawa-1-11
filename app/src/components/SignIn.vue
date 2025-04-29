@@ -16,25 +16,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useAuthStore } from '../stores/pinia' // Ensure this path is correct
-import { useRouter } from 'vue-router' // Import useRouter
+import { ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/pinia'
 
+const email = ref('')
+const password = ref('')
 const authStore = useAuthStore()
-const email = ref<string>('') // Explicitly define the type as string
-const password = ref<string>('') // Explicitly define the type as string
-const router = useRouter() // Initialize the router
+const router = useRouter()
 
 const login = async () => {
-  try {
-    await authStore.login(email.value, password.value)
-    // Check if the user is logged in successfully
-    if (authStore.user) {
-      // Redirect to the desired page after successful login
-      router.push('/AboutView') // Change '/dashboard' to your desired route
-    }
-  } catch (error) {
-    console.error('Login failed:', error) // Handle error appropriately
+  await authStore.login(email.value, password.value)
+
+  // ✅ After login, redirect if user is set
+  if (authStore.user) {
+    router.push('/landing') // or /about or any route
   }
 }
 </script>
