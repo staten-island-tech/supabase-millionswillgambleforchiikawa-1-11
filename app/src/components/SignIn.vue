@@ -17,14 +17,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useAuthStore } from '../stores/pinia' // Ensure this path is correct
-import { useRouter } from 'vue-router' // Import useRouter
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/pinia' // Adjust path as needed
 
 const authStore = useAuthStore()
-const email = ref<string>('') // Explicitly define the type as string
-const password = ref<string>('') // Explicitly define the type as string
-const router = useRouter() // Initialize the router
-
+const email = ref<string>('')
+const password = ref<string>('')
+const router = useRouter()
 const login = async () => {
   try {
     await authStore.login(email.value, password.value)
@@ -38,7 +37,7 @@ const login = async () => {
       console.log('help me')
     }
   } catch (error) {
-    console.error('Login failed:', error) // Handle error appropriately
+    console.error('Login failed:', error)
   }
 }
 </script>
