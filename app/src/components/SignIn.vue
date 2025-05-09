@@ -28,7 +28,6 @@ const login = async () => {
   try {
     await authStore.login(email.value, password.value)
     // Check if the user is logged in successfully
-    const { error } = await authStore.login(email.value, password.value)
     if (authStore.user) {
       // Redirect to the desired page after successful login
       console.log('help')
