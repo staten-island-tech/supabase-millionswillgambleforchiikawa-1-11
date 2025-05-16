@@ -34,7 +34,7 @@ const createAccount = async () => {
       console.error('Sign up failed:', error)
     } else {
       // Redirect to the desired page after successful account creation
-      router.push('/AboutView') // Change '/AboutView' to your desired route
+      // Change '/AboutView' to your desired route
     }
   } catch (error) {
     console.error('Sign up failed:', error) // Handle error appropriately

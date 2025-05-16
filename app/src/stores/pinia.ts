@@ -8,17 +8,17 @@ export interface AuthStore {
   user: User | null;
   error: string | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<{ user: User | null; error: string | null }>; // Update return type
+  login: (email: string, password: string) => Promise<{ user: User | null; error: string | null }>;
+  signUp: (email: string, password: string) => Promise<{ user: User | null; error: string | null }>;
   logout: () => Promise<void>;
 }
 
-export const useAuthStore = defineStore('auth', (): AuthStore => {
+export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null);
   const error = ref<string | null>(null);
   const loading = ref<boolean>(false);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string): Promise<{ user: User | null; error: string | null }> => {
     loading.value = true;
     error.value = null;
 
@@ -31,8 +31,10 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
 
     if (loginError) {
       error.value = loginError.message; // Handle login error
+      return { user: null, error: loginError.message }; // Return error
     } else {
       user.value = data.user; // Access the user from the data object
+      return { user: data.user, error: null }; // Return user
     }
   };
 
@@ -40,7 +42,6 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
     loading.value = true;
     error.value = null;
 
-    // Call the signUp method and handle the response correctly
     const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
@@ -67,9 +68,9 @@ export const useAuthStore = defineStore('auth', (): AuthStore => {
   };
 
   return {
-    user: user.value,
-    error: error.value,
-    loading: loading.value,
+    user,
+    error,
+    loading,
     login,
     signUp,
     logout,
