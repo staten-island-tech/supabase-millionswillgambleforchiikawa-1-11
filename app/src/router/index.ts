@@ -1,13 +1,8 @@
-// Replace with your Supabase URL and Anon Key
-// Import the Supabase client
-// Replace with your Supabase URL and Anon Key
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
+import { useAuthStore } from '../stores/pinia' // ✅ Correct import
+import { storeToRefs } from 'pinia'
 
-// Create a Supabase client
-// Example function to fetch data from a table
-
-// src/router.js
-import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -20,6 +15,7 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
+      meta: { requiresAuth: true },
     },
     {
       path: '/landing',
@@ -27,6 +23,20 @@ const router = createRouter({
       component: () => import('../views/LandingPage.vue'),
     },
   ],
-});
+})
 
-export default router;
+// ✅ Navigation guard
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore()
+  const { user } = storeToRefs(authStore)
+
+  const requiresAuth = to.meta.requiresAuth
+
+  if (requiresAuth && !user.value) {
+    next('/landing') // Redirect if not logged in
+  } else {
+    next() // Proceed
+  }
+})
+
+export default router
