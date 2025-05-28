@@ -20,8 +20,6 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/pinia' // Adjust path as needed
 
-const email = ref('')
-const password = ref('')
 const authStore = useAuthStore()
 const email = ref<string>('')
 const password = ref<string>('')
