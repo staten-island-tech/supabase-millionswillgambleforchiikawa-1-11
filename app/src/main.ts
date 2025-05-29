@@ -16,8 +16,8 @@ app.use(router)
 
 app.mount('#app')
 
-const supabaseUrl = "https://mkumryudrsvmgwhydnxl.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1rdW1yeXVkcnN2bWd3aHlkbnhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM2MDkxNjUsImV4cCI6MjA1OTE4NTE2NX0.ZZJ9_gEdXDP818MGRU7j0r7aKWlVtEY0ZAcq024aKY8"
+const supabaseUrl = "https://fpzsqqzlfazfgmtapujs.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwenNxcXpsZmF6ZmdtdGFwdWpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0NDkyNzgsImV4cCI6MjA2NDAyNTI3OH0.cxF-PIJvd2r4wgY1upD4Rra6lQxtqjpKa1-imCaEeWk"
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 
