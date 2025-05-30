@@ -1,15 +1,17 @@
+// ChiikawaInfo.ts
+
 import type { GachaItem } from '../stores/gachaStores'
 
 export const gachaPool: GachaItem[] = [
   { id: 1, name: 'Chiikawa', rarity: 5, image: '', description:"Chiikawa is gentle, sweet, and kind. Cautious to step out of their comfort zone, and somewhat shy, Chiikawa often gets nervous which usually results in anxious tears. Thankfully, best friends Hachiware and Usagi always has this cute and small creature’s back."},
   { id: 2, name: 'Hachiware', rarity: 5, image: '', description: "Hachiware has a big heart, possesses a can-do attitude, and always finds the bright side. A true best friend, Hachiware helps Chiikawa overcome fears and makes them feel safe. Despite the cat-like ears and the occasional blep, for the record, Hachiware is not necessarily a cat."},
   { id: 3, name: 'Usagi', rarity: 5, image: '', description: "The most energetic of the crew, Usagi seems to find the fun. Though the word usagi literally means rabbit in Japanese, and Usagi has bunny-looking ears, it’s unclear Usagi’s identity. Maybe a rabbit, maybe not. Lively and fearless, Usagi is known for signature yells “Yaha!” and “Ura!”. Interestingly, no one knows where Usagi lives."},
-  { id: 4, name: '', rarity: 0, image: '', description: ''},
-  { id: 5, name: '', rarity: 0, image: '', description: ''},
-  { id: 6, name: '', rarity: 0, image: '', description: ''},
-  { id: 7, name: '', rarity: 0, image: '', description: ''},
-  { id: 8, name: '', rarity: 0, image: '', description: ''},
-  { id: 9, name: '', rarity: 0, image: '', description: ''},
-  { id: 10, name: '', rarity: 0, image: '', description: ''},
-  { id: 11, name: '', rarity: 0, image: '', description: ''},
+  { id: 4, name: 'Momonga', rarity: 3, image: '', description: 'With wide expressive eyes and a big fluffy tail, Momonga is super cute and not afraid to use it. Prone to making unreasonable demands and causing trouble, the energetic Momonga often tries to wield their adorableness to get their way.  Also, momonga can fly.'},
+  { id: 5, name: 'Rakko', rarity: 5, image: '', description: "A highly regarded hunter, and respected for bravery, Rakko is the #1 top ranking leader in the field of monster hunting. While skilled with a sword, Rakko is generous and kind and enjoys helping Chiikawa and friends to improve their hunting abilities. Rakko also loves to indulge in sweet treats!"},
+  { id: 6, name: 'Kurimanju', rarity: 2, image: '', description: "Kurimanju has a certain fondness for beverages… strong ones. Equipped with a drinking license, Kurimanju is often seen with snacks and drinks in hand and is known for making a big sigh after finishing the last sip.  Though quiet in nature, Kurimanju is kind and can be found sharing food with Chiikawa and friends."},
+  { id: 7, name: 'Shisa', rarity: 3, image: '', description: 'Inspired by the guardians of the Ryukyu islands, the lion-esque looking Shisa is a hard worker to the core. After passing the extremely difficult "super part - time worker qualification," exam, Shisa works as an assistant to the chef Ramen Yoroi-san at Rou. Shisa regards the boss as a ramen master and holds them in the highest esteem.'},
+  { id: 8, name: 'Furuhonya', rarity: 4, image: '', description: 'Furuhonya is a kindhearted bookworm who buys and sells secondhand books. Kindhearted and considerate, this lovable pink pal is friends withMomonga. In fact, Furuhonya’s crab-shaped headband was a gift from Momonga. Furuhonya is sometimes called Kani chan by fans. Kani means crab in Japanese.'},
+  { id: 9, name: 'Puchette no yoroi-san', rarity: 2, image: '', description: 'Pochette no-Yoroi-san is a gentle knight who loves cute things. He enjoys crafting and sells handmade pajamas.'},
+  { id: 10, name: 'Roudou no Yoroi-san', rarity: 2, image: '', description: 'Roudou no Yori-san oversees handing out the work assignments. Unfortunately, Roudou no Yori-san often gets tangled up in Momonga’s mischief.'},
+  { id: 11, name: 'Ramen no Yoroi-san', rarity: 2, image: '', description: 'Ramen no Yoroi-san owns the local ramen shop called “Rou”. Ramen no Yorio-san’s assistant, Shisa, is a not-so-secret admirer.'},
 ]

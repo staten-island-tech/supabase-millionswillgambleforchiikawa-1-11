@@ -1,3 +1,4 @@
+// gachaStores.ts
 
 export interface GachaItem {
     id: number
