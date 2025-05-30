@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="about">U U WA WA UUWAWA</div>
+    <div class="about"></div>
     <img
       src="/ChiikawaIdle.gif"
       alt="Chiikawa"
@@ -9,6 +9,9 @@
         transform: `translate(${position.x}px, ${position.y}px)`,
       }"
     />
+    <button class="gachabutton">Gacha</button>
+    <button class="inventorybutton">Inventory</button>
+    <button class="stickersbutton">Stickers</button>
   </div>
 </template>
 
