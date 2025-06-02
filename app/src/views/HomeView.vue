@@ -10,6 +10,13 @@ import CreateAccount from '@/components/CreateAccount.vue'
   </main>
 </template>
 
+<style scoped>
+main {
+  font-size: 3rem;
+  align-content: center;
+}
+</style>
+
 <!--
 typescript
 - defines interfaces

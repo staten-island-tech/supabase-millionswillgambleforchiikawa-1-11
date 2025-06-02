@@ -90,4 +90,8 @@ body {
   border-radius: 50%;
   transition: transform 0.05s linear;
 }
+
+button {
+  font-size: 10rem;
+}
 </style>

@@ -8,4 +8,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+button {
+  font-size: 5rem;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <form @submit.prevent="login">
       <div>
         <label for="email">Email:</label>
@@ -40,3 +40,13 @@ const login = async () => {
   }
 }
 </script>
+<style scoped>
+.container {
+  size: 3rem;
+  font-size: 3 rem;
+}
+input {
+  width: 12rem;
+  height: 2rem;
+}
+</style>
