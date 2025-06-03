@@ -1,20 +1,18 @@
 <template>
-  <div class="card">
-    <!-- <img src="image" alt="name" class="image"/> -->
-    <h1 class="name">{{ name }}</h1>
-    <h2 class="rarity">{{ rarity }}</h2>
-    <p class="name">{{ description }}</p>
-  </div>
+  <ChiikawaCard
+    v-for="(item, index) in gachaPool"
+    :key="index"
+    :name="item.name"
+    :rarity="item.rarity"
+    :image="item.image"
+    :description="item.description"
+  />
 </template>
 
 <script setup lang="ts">
-defineProps({
-  name: String,
-  rarity: Number,
-  image: String,
-  description: String,
-  index: Number,
-})
+import { gachaPool } from '../stores/ChiikawaInfo' // ✅ Make sure this path is correct
+
+import ChiikawaCard from './ChiikawaCards.vue'
 </script>
 
 <style scoped>

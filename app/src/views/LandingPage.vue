@@ -3,6 +3,7 @@
     <button>Gacha</button>
     <button>Inventory</button>
     <button>Stickers</button>
+    <button>View Character Index</button>
   </div>
 </template>
 
@@ -10,6 +11,6 @@
 
 <style scoped>
 button {
-  font-size: 5rem;
+  font-size: 2rem;
 }
 </style>
