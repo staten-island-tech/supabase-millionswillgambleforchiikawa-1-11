@@ -10,8 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { gachaPool } from '../stores/ChiikawaInfo' // ✅ Make sure this path is correct
-
+import { gachaPool } from '../stores/ChiikawaInfo'
 import ChiikawaCard from './ChiikawaCards.vue'
 </script>
 

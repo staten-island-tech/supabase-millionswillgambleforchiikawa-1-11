@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <!-- <img src="image" alt="name" class="image"/> -->
+    <img src="image" alt="name" class="image" />
     <h1 class="name">{{ name }}</h1>
     <h2 class="rarity">{{ rarity }}</h2>
     <p class="name">{{ description }}</p>

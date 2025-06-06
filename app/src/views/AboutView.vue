@@ -94,6 +94,6 @@ body {
 }
 
 button {
-  font-size: 10rem;
+  font-size: 3rem;
 }
 </style>

@@ -12,7 +12,7 @@ import CreateAccount from '@/components/CreateAccount.vue'
 
 <style scoped>
 main {
-  font-size: 3rem;
+  font-size: 2rem;
   align-content: center;
 }
 </style>
