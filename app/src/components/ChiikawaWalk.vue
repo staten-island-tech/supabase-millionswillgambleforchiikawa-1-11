@@ -7,9 +7,6 @@
       transform: `translate(${position.x}px, ${position.y}px)`,
     }"
   />
-  <button class="gachabutton">Gacha</button>
-  <button class="inventorybutton">Inventory</button>
-  <button class="stickersbutton">Stickers</button>
 </template>
 
 <script setup>
