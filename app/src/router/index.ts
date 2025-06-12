@@ -19,19 +19,23 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
+      path: '/gacha',
+      name: 'gacha',
+      component: () => import('../views/GachaPage.vue'),
+    },
+    {
       path: '/landing',
       name: 'landing',
       component: () => import('../views/LandingPage.vue'),
     },
     {
       path: '/index',
-      name: 'index',
-      component: () => import('../views/GachaDesc.vue'),
+      name: 'index-gacha',
+      component: () => import('../views/Index.vue'), 
     },
   ],
 })
 
-// ✅ Navigation guard
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
   const { user } = storeToRefs(authStore)
