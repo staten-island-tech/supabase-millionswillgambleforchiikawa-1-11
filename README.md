@@ -43,3 +43,20 @@ user_id uuid references profiles(id),
 gacha_id int,
 obtained_at timestamp default now()
 );
+
+Step 1: Supabase Schema Assumptions
+You should have:
+
+profiles table with user coins.
+
+inventory table:
+
+sql
+Copy
+Edit
+create table inventory (
+id serial primary key,
+user_id uuid references profiles(id),
+gacha_id int,
+obtained_at timestamp
+).
