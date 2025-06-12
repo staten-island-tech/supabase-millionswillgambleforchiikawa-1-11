@@ -12,9 +12,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue'),
+      path: '/second',
+      name: 'second',
+      component: () => import('../views/SecondaryView.vue'),
       meta: { requiresAuth: true },
     },
     {
@@ -30,7 +30,7 @@ const router = createRouter({
     {
       path: '/index',
       name: 'index-gacha',
-      component: () => import('../views/Index.vue'), 
+      component: () => import('../views/IndexCards.vue'), 
     },
   ],
 })

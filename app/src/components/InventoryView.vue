@@ -10,7 +10,6 @@
         <h2>{{ item.name }}</h2>
         <p>⭐ Rarity: {{ item.rarity }}</p>
         <p>{{ item.description }}</p>
-        <p class="timestamp">Obtained: {{ formatDate(item.obtained_at) }}</p>
       </div>
     </div>
   </div>
@@ -27,10 +26,6 @@ const user = authStore.user
 
 const loading = ref(true)
 const items = ref<any[]>([])
-
-const formatDate = (timestamp: string) => {
-  return new Date(timestamp).toLocaleString()
-}
 
 onMounted(async () => {
   if (!user) return
@@ -77,9 +72,5 @@ onMounted(async () => {
   border-radius: 1rem;
   width: 20rem;
   background-color: #fff8e1;
-}
-.timestamp {
-  font-size: 0.8rem;
-  color: gray;
 }
 </style>
