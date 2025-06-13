@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
-    <div class="about">
-      <ChiikawaWalk></ChiikawaWalk>
+  <html lang="en">
+    <div class="container">
+      <div class="about">
+        <ChiikawaWalk></ChiikawaWalk>
+      </div>
     </div>
-  </div>
+  </html>
 </template>
 
 <script setup>

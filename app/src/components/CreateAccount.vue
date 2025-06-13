@@ -12,7 +12,6 @@
       <button type="submit" :disabled="authStore.loading">Create Account</button>
       <div v-if="authStore.error">{{ authStore.error }}</div>
     </form>
-    <p>Already have an account? <button @click="switchToLogin">Sign Up</button></p>
   </div>
 </template>
 
@@ -37,24 +36,64 @@ const createAccount = async () => {
       // Change '/AboutView' to your desired route
     }
   } catch (error) {
-    console.error('Sign up failed:', error) // Handle error appropriately
+    console.error('Sign up failed:', error)
   }
-}
-
-const switchToLogin = () => {
-  // Logic to switch to the login form can be implemented here
-  // For example, you could emit an event or change a state variable
 }
 </script>
 
 <style scoped>
 .container {
-  size: 3rem;
-  font-size: 3 rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff; /* White for high contrast */
+  border: 2px solid #000000; /* High contrast border */
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #000000; /* Black text for max contrast */
 }
 
 input {
-  width: 12rem;
-  height: 2rem;
+  font-size: 1.1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  color: #000000;
+  background-color: #ffffff; /* White background */
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0055aa; /* Dark blue */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button:disabled {
+  background-color: #999999; /* Still passes contrast */
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #cc0000; /* Strong red with high contrast */
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
 }
 </style>

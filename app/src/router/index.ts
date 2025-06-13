@@ -16,7 +16,6 @@ const router = createRouter({
       path: '/inventory',
       name: 'inventory',
       component: () => import('../views/UserInv.vue'),
-      meta: { requiresAuth: true },
     },
     {
       path: '/gacha',
@@ -27,6 +26,7 @@ const router = createRouter({
       path: '/landing',
       name: 'landing',
       component: () => import('../views/LandingPage.vue'),
+      meta: { requiresAuth: true },
     },
     {
       path: '/index',
@@ -43,7 +43,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.meta.requiresAuth
 
   if (requiresAuth && !user.value) {
-    next('/landing') // Redirect if not logged in
+    next('/') // Redirect if not logged in
   } else {
     next() // Proceed
   }

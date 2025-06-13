@@ -1,18 +1,20 @@
 <template>
-  <div class="inventory">
-    <h1>Your Inventory</h1>
+  <html lang="en">
+    <div class="inventory">
+      <h1>Your Inventory</h1>
 
-    <div v-if="loading">Loading inventory...</div>
-    <div v-else-if="items.length === 0">You have no items yet.</div>
+      <div v-if="loading">Loading inventory...</div>
+      <div v-else-if="items.length === 0">You have no items yet.</div>
 
-    <div v-else class="cards">
-      <div v-for="item in items" :key="item.inventory_id" class="card">
-        <h2>{{ item.name }}</h2>
-        <p>⭐ Rarity: {{ item.rarity }}</p>
-        <p>{{ item.description }}</p>
+      <div v-else class="cards">
+        <div v-for="item in items" :key="item.inventory_id" class="card">
+          <h2>{{ item.name }}</h2>
+          <h3>Rarity: {{ item.rarity }}</h3>
+          <h3>{{ item.description }}</h3>
+        </div>
       </div>
     </div>
-  </div>
+  </html>
 </template>
 
 <script setup lang="ts">

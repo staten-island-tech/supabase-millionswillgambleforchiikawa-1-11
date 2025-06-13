@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import SignIn from '@/components/SignIn.vue'
-import CreateAccount from '@/components/CreateAccount.vue'
+import SignIn from '../components/SignIn.vue'
+import CreateAccount from '../components/CreateAccount.vue'
 </script>
 
 <template>
-  <main>
-    <SignIn></SignIn>
-    <CreateAccount></CreateAccount>
-  </main>
+  <html lang="en">
+    <main>
+      <SignIn></SignIn>
+      <CreateAccount></CreateAccount>
+    </main>
+  </html>
 </template>
 
 <style scoped>

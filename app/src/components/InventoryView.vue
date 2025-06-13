@@ -17,9 +17,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import supabase from '../main' // your Supabase client
+import supabase from '../main'
 import { useAuthStore } from '../stores/pinia'
-import { gachaPool } from '../data/ChiikawaInfo'
+import { gachaPool } from '../stores/ChiikawaInfo'
 
 const authStore = useAuthStore()
 const user = authStore.user

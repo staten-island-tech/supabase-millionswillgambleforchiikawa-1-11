@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <ChiikawaDisplay></ChiikawaDisplay>
-  </div>
+  <html lang="en">
+    <div>
+      <ChiikawaDisplay></ChiikawaDisplay>
+    </div>
+  </html>
 </template>
 
 <script setup lang="ts">
