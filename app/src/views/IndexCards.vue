@@ -1,11 +1,11 @@
 <template>
   <div>
-    <ChiikawaDisplay />
+    <ChiikawaDisplay></ChiikawaDisplay>
   </div>
 </template>
 
 <script setup lang="ts">
-import ChiikawaDisplay from '@/components/ChiikawaDisplay.vue'
+import ChiikawaDisplay from '../components/ChiikawaDisplay.vue'
 </script>
 
 <style scoped></style>
