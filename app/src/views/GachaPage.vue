@@ -1,15 +1,13 @@
 <template>
   <html lang="en">
     <div class="container">
-      <div class="about">
-        <ChiikawaWalk></ChiikawaWalk>
-      </div>
+      <div class="about"><GachaRoll></GachaRoll></div>
     </div>
   </html>
 </template>
 
 <script setup>
-import ChiikawaWalk from '../components/ChiikawaWalk.vue'
+import GachaRoll from '../components/GachaRoll.vue'
 </script>
 <style scoped>
 body {
@@ -24,13 +22,6 @@ body {
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
-}
-.chiikawa {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  transition: transform 0.05s linear;
 }
 
 button {
