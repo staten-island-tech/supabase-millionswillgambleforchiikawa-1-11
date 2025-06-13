@@ -1,6 +1,7 @@
 <template>
   <html lang="en">
     <div>
+      <h1>Chiikawa Character Index!</h1>
       <ChiikawaDisplay></ChiikawaDisplay>
     </div>
   </html>
@@ -10,4 +11,8 @@
 import ChiikawaDisplay from '../components/ChiikawaDisplay.vue'
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-size: 5rem;
+}
+</style>
