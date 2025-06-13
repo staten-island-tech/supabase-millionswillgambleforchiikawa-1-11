@@ -63,7 +63,6 @@ body {
   background: url(https://i.pinimg.com/236x/dc/ff/0c/dcff0c4e41a322e809e148396886118e.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
   transition:
     color 0.5s,
     background-color 0.5s;
