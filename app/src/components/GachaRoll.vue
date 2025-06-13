@@ -19,20 +19,33 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { gachaPool } from '../data/ChiikawaInfo'
-import supabase from '../main' // adjust to your Supabase client
+import supabase from '../main'
 import { useAuthStore } from '../stores/pinia'
+import { storeToRefs } from 'pinia'
+
+interface GachaItem {
+  id: number
+  name: string
+  rarity: number
+  description: string
+}
 
 const authStore = useAuthStore()
-const user = authStore.user
+const { user } = storeToRefs(authStore)
 
 const money = ref(0)
-const rolledItem = ref(null)
+const rolledItem = ref<GachaItem | null>(null)
 const message = ref('')
 const loading = ref(false)
 
 const fetchMoney = async () => {
-  if (!user) return
-  const { data, error } = await supabase.from('profiles').select('money').eq('id', user.id).single()
+  if (!user.value) return
+  const { data, error } = await supabase
+    .from('usertable') // ✅ correct table
+    .select('money')
+    .eq('id', user.value.id)
+    .single()
+
   if (data) money.value = data.money
   else console.error(error)
 }
@@ -48,12 +61,11 @@ const rollGacha = async () => {
   loading.value = true
   message.value = ''
 
-  // Deduct coins
   const newBalance = money.value - 15
   const { error: updateError } = await supabase
-    .from('profiles')
+    .from('usertable')
     .update({ money: newBalance })
-    .eq('id', user.id)
+    .eq('id', user.value.id)
 
   if (updateError) {
     console.error(updateError)
@@ -64,15 +76,12 @@ const rollGacha = async () => {
 
   money.value = newBalance
 
-  // Randomly choose a gacha item
-  const randomIndex = Math.floor(Math.random() * gachaPool.length)
-  const item = gachaPool[randomIndex]
+  const item = gachaPool[Math.floor(Math.random() * gachaPool.length)]
   rolledItem.value = item
   message.value = `You rolled: ${item.name}! 🎉`
 
-  // OPTIONAL: Save to user's inventory table
   await supabase.from('inventory').insert({
-    user_id: user.id,
+    user_id: user.value.id,
     gacha_id: item.id,
     obtained_at: new Date().toISOString(),
   })
