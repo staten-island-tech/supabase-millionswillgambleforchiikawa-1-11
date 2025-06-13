@@ -17,4 +17,8 @@
 
 <script setup></script>
 
-<style scoped></style>
+<style scoped>
+button {
+  font-size: 2rem;
+}
+</style>
