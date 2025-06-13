@@ -1,8 +1,12 @@
 <template>
   <div class="card">
-    <img :src="image" :alt="name" class="image" />
+    <img
+      :src="image"
+      :alt="`picture of ${name} standing with phonetic spelling below`"
+      class="image"
+    />
     <h1 class="name">{{ name }}</h1>
-    <h2 class="rarity">{{ rarity }}</h2>
+    <h2 class="rarity">{{ rarity }} Stars</h2>
     <p class="description">{{ description }}</p>
   </div>
 </template>

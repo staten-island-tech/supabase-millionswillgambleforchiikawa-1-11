@@ -31,7 +31,7 @@ const login = async () => {
     if (authStore.user) {
       // Redirect to the desired page after successful login
       console.log('help')
-      router.push({ path: `/about` }) // Change '/dashboard' to your desired route
+      router.push({ path: `/landing` }) // Change '/dashboard' to your desired route
     } else {
       console.log('help me')
     }
