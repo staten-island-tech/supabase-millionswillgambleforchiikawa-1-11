@@ -13,9 +13,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/second',
-      name: 'second',
-      component: () => import('../views/SecondaryView.vue'),
+      path: '/inventory',
+      name: 'inventory',
+      component: () => import('../views/UserInv.vue'),
       meta: { requiresAuth: true },
     },
     {

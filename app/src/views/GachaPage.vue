@@ -6,7 +6,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import ChiikawaWalk from '../components/ChiikawaWalk.vue'
+</script>
 <style scoped>
 body {
   min-height: 100dvh;
