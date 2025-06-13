@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <img src="image" alt="name" class="image" />
+    <img :src="image" :alt="name" class="image" />
     <h1 class="name">{{ name }}</h1>
     <h2 class="rarity">{{ rarity }}</h2>
-    <p class="name">{{ description }}</p>
+    <p class="description">{{ description }}</p>
   </div>
 </template>
 
@@ -28,8 +28,8 @@ defineProps({
 .card {
   border-radius: 1.5rem;
   border-width: 1rem;
-  width: 25rem;
-  height: 45rem;
+  width: 30rem;
+  height: 50rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;

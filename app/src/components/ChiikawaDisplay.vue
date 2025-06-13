@@ -18,6 +18,7 @@ import ChiikawaCard from './ChiikawaCards.vue'
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   padding: 2rem;
 }
@@ -25,8 +26,8 @@ import ChiikawaCard from './ChiikawaCards.vue'
 .card {
   border-radius: 1.5rem;
   border-width: 1rem;
-  width: 25rem;
-  height: 45rem;
+  width: 30rem;
+  height: fit-content;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -46,12 +47,12 @@ import ChiikawaCard from './ChiikawaCards.vue'
 }
 
 .rarity {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(13, 107, 101);
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: rgb(13, 107, 101);
   padding: 1rem;
   text-align: center;
