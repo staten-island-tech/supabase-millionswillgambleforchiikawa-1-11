@@ -18,9 +18,9 @@ import ChiikawaCard from './ChiikawaCards.vue'
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   flex-direction: row;
-  justify-content: center;
-  padding: 2rem;
 }
 
 .card {
